@@ -63,14 +63,14 @@ void forceAction(bool open) {
   myServo.attach(SERVO_PIN);
   if (open) { 
     Serial.println(F(">>> ACTION: OPENING...")); 
-    myServo.write(120); 
+    myServo.write(70); 
   } else { 
     Serial.println(F(">>> ACTION: CLOSING...")); 
-    myServo.write(60); 
+    myServo.write(110); 
   }
-  vTaskDelay(pdMS_TO_TICKS(800)); 
+  vTaskDelay(pdMS_TO_TICKS(550)); 
   myServo.write(90); 
-  vTaskDelay(pdMS_TO_TICKS(200));
+  vTaskDelay(pdMS_TO_TICKS(150));
   myServo.detach();
   Serial.println(F(">>> ACTION: DONE."));
 }
